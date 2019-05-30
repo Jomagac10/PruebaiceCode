@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		286B29DB31BB8A4B42D6F07B /* Pods_testIceCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3193B63554F9638249550E40 /* Pods_testIceCode.framework */; };
 		DD65C1D322A05EED00A8FE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65C1D222A05EED00A8FE39 /* AppDelegate.swift */; };
 		DD65C1D522A05EED00A8FE39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65C1D422A05EED00A8FE39 /* ViewController.swift */; };
 		DD65C1D822A05EED00A8FE39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD65C1D622A05EED00A8FE39 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C4476FCD816AC8A6C5B8417 /* Pods-testIceCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testIceCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-testIceCode/Pods-testIceCode.release.xcconfig"; sourceTree = "<group>"; };
+		3193B63554F9638249550E40 /* Pods_testIceCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testIceCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B4F43EF48511242BE5B581C /* Pods-testIceCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testIceCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testIceCode/Pods-testIceCode.debug.xcconfig"; sourceTree = "<group>"; };
 		DD65C1CF22A05EED00A8FE39 /* testIceCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testIceCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD65C1D222A05EED00A8FE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD65C1D422A05EED00A8FE39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				286B29DB31BB8A4B42D6F07B /* Pods_testIceCode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9320B655A335C190C1306FC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3193B63554F9638249550E40 /* Pods_testIceCode.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC66A6C72B36CC8A7905D394 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B4F43EF48511242BE5B581C /* Pods-testIceCode.debug.xcconfig */,
+				2C4476FCD816AC8A6C5B8417 /* Pods-testIceCode.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DD65C1C622A05EED00A8FE39 = {
 			isa = PBXGroup;
 			children = (
 				DD65C1D122A05EED00A8FE39 /* testIceCode */,
 				DD65C1D022A05EED00A8FE39 /* Products */,
+				BC66A6C72B36CC8A7905D394 /* Pods */,
+				9320B655A335C190C1306FC7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD65C1E122A05EFC00A8FE39 /* Build configuration list for PBXNativeTarget "testIceCode" */;
 			buildPhases = (
+				0A61CC050C186BA6AEB2D0FE /* [CP] Check Pods Manifest.lock */,
 				DD65C1CB22A05EED00A8FE39 /* Sources */,
 				DD65C1CC22A05EED00A8FE39 /* Frameworks */,
 				DD65C1CD22A05EED00A8FE39 /* Resources */,
+				378D05EC1B93C8098A64E725 /* [CP] Embed Pods Frameworks */,
+				D72AC64C1DD4EC78AC0F9322 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,64 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A61CC050C186BA6AEB2D0FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-testIceCode-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		378D05EC1B93C8098A64E725 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-testIceCode/Pods-testIceCode-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testIceCode/Pods-testIceCode-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D72AC64C1DD4EC78AC0F9322 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testIceCode/Pods-testIceCode-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD65C1CB22A05EED00A8FE39 /* Sources */ = {
@@ -280,15 +365,13 @@
 		};
 		DD65C1E222A05EFC00A8FE39 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B4F43EF48511242BE5B581C /* Pods-testIceCode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28GWAF24BT;
 				INFOPLIST_FILE = testIceCode/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.unam.testIceCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -298,15 +381,13 @@
 		};
 		DD65C1E322A05EFC00A8FE39 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C4476FCD816AC8A6C5B8417 /* Pods-testIceCode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28GWAF24BT;
 				INFOPLIST_FILE = testIceCode/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.unam.testIceCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
