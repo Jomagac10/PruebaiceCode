@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		286B29DB31BB8A4B42D6F07B /* Pods_testIceCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3193B63554F9638249550E40 /* Pods_testIceCode.framework */; };
+		DD4A18E122A0649500246406 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A18E022A0649500246406 /* MyTableViewController.swift */; };
+		DD4A18E322A0656900246406 /* amiibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A18E222A0656900246406 /* amiibo.swift */; };
+		DD4A18E522A0900200246406 /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A18E422A0900200246406 /* DetailsController.swift */; };
 		DD65C1D322A05EED00A8FE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65C1D222A05EED00A8FE39 /* AppDelegate.swift */; };
-		DD65C1D522A05EED00A8FE39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65C1D422A05EED00A8FE39 /* ViewController.swift */; };
 		DD65C1D822A05EED00A8FE39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD65C1D622A05EED00A8FE39 /* Main.storyboard */; };
 		DD65C1DA22A05EFC00A8FE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD65C1D922A05EFC00A8FE39 /* Assets.xcassets */; };
 		DD65C1DD22A05EFC00A8FE39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD65C1DB22A05EFC00A8FE39 /* LaunchScreen.storyboard */; };
@@ -19,9 +21,11 @@
 		2C4476FCD816AC8A6C5B8417 /* Pods-testIceCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testIceCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-testIceCode/Pods-testIceCode.release.xcconfig"; sourceTree = "<group>"; };
 		3193B63554F9638249550E40 /* Pods_testIceCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testIceCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B4F43EF48511242BE5B581C /* Pods-testIceCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testIceCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testIceCode/Pods-testIceCode.debug.xcconfig"; sourceTree = "<group>"; };
+		DD4A18E022A0649500246406 /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
+		DD4A18E222A0656900246406 /* amiibo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amiibo.swift; sourceTree = "<group>"; };
+		DD4A18E422A0900200246406 /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
 		DD65C1CF22A05EED00A8FE39 /* testIceCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testIceCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD65C1D222A05EED00A8FE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD65C1D422A05EED00A8FE39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD65C1D722A05EED00A8FE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD65C1D922A05EFC00A8FE39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD65C1DC22A05EFC00A8FE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,11 +83,13 @@
 			isa = PBXGroup;
 			children = (
 				DD65C1D222A05EED00A8FE39 /* AppDelegate.swift */,
-				DD65C1D422A05EED00A8FE39 /* ViewController.swift */,
 				DD65C1D622A05EED00A8FE39 /* Main.storyboard */,
 				DD65C1D922A05EFC00A8FE39 /* Assets.xcassets */,
 				DD65C1DB22A05EFC00A8FE39 /* LaunchScreen.storyboard */,
 				DD65C1DE22A05EFC00A8FE39 /* Info.plist */,
+				DD4A18E022A0649500246406 /* MyTableViewController.swift */,
+				DD4A18E422A0900200246406 /* DetailsController.swift */,
+				DD4A18E222A0656900246406 /* amiibo.swift */,
 			);
 			path = testIceCode;
 			sourceTree = "<group>";
@@ -220,8 +226,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD65C1D522A05EED00A8FE39 /* ViewController.swift in Sources */,
+				DD4A18E522A0900200246406 /* DetailsController.swift in Sources */,
+				DD4A18E322A0656900246406 /* amiibo.swift in Sources */,
 				DD65C1D322A05EED00A8FE39 /* AppDelegate.swift in Sources */,
+				DD4A18E122A0649500246406 /* MyTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +379,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28GWAF24BT;
 				INFOPLIST_FILE = testIceCode/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = mx.unam.testIceCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -387,7 +398,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28GWAF24BT;
 				INFOPLIST_FILE = testIceCode/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = mx.unam.testIceCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
