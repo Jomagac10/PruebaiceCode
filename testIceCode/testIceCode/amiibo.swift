@@ -8,6 +8,8 @@
 
 import Foundation
 
+//MARK: Model
+
 struct amiibo: Decodable{
     let name: String
     let image: String

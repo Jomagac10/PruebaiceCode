@@ -12,26 +12,13 @@ import Kingfisher
 
 class MyTableViewController: UITableViewController,UISearchBarDelegate {
     
+    //MARK: Properties
     let reuseIdentifier = "Cell"
     var amis:[amiibo] = []
     let searchController = UISearchController(searchResultsController: nil)
     let Ami: DetailsController = DetailsController()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.backgroundColor = UIColor.gray
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
-        
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-        
-        searchController.dimsBackgroundDuringPresentation = false
-        self.definesPresentationContext = true
-        searchController.searchBar.delegate = self
-
-        consumeAPI(with: "https://www.amiiboapi.com/api/amiibo/")
-    }
+    
 
     // MARK: - Table view data source
 
@@ -39,27 +26,27 @@ class MyTableViewController: UITableViewController,UISearchBarDelegate {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return amis.count
     }
-
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-
-        cell.textLabel?.text = "\(amis[indexPath.row].name) - \(amis[indexPath.row].amiiboSeries)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! AmiiboCell
+        cell._Name.text = "\(amis[indexPath.row].name)"
+        cell._Series.text = "\(amis[indexPath.row].amiiboSeries)"
         let url = URL(string: amis[indexPath.row].image)
-        cell.imageView?.kf.setImage(with: url)
+        cell._Image.kf.setImage(with: url)
         return cell
     }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Ami.ami = amis[indexPath.row]
         self.navigationController?.pushViewController(self.Ami, animated: true)
     }
  
+    //MARK: SearchBar functions
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         consumeAPI(with: "https://www.amiiboapi.com/api/amiibo/?name=\(searchText)")
     }
@@ -72,6 +59,26 @@ class MyTableViewController: UITableViewController,UISearchBarDelegate {
         tableView.reloadData()
     }
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.backgroundColor = UIColor.gray
+        
+        tableView.register(UINib(nibName: "AmiiboTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
+        
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        searchController.dimsBackgroundDuringPresentation = false
+        self.definesPresentationContext = true
+        searchController.searchBar.delegate = self
+        
+        consumeAPI(with: "https://www.amiiboapi.com/api/amiibo/")
+    }
+    
+    
+    
+    //MARK: API services
     func consumeAPI(with url: String){
         Alamofire.request(url).responseData { (dataResponse) in
             if let err = dataResponse.error{
@@ -84,7 +91,6 @@ class MyTableViewController: UITableViewController,UISearchBarDelegate {
             //            print(testString ?? "")
             
             do{
-                
                 let searchResult = try JSONDecoder().decode(SearchResults.self, from: data)
                 self.amis.removeAll()
                 

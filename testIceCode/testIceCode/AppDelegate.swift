@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
+        //MARK: Set first view controller
         let table = LoginViewController()
         window?.rootViewController = table
         return true

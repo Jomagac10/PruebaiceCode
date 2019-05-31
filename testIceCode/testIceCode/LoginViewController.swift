@@ -12,6 +12,10 @@ import CoreData
 class LoginViewController: UIViewController {
     
     
+    //Properties
+    let persistentContainer = NSPersistentContainer(name: "Login")
+    lazy var context: NSManagedObjectContext = self.persistentContainer.viewContext
+    
     let formContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 151/255, green: 252/255, blue: 223/255, alpha: 1)
@@ -55,18 +59,29 @@ class LoginViewController: UIViewController {
         return btn
     }()
     
-    func isValidEmail(testStr:String?) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: testStr)
-    }
-
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         setupLayout()
+        persistentContainer.loadPersistentStores { (storeDescription, error) in
+            if let error = error {
+                fatalError("\(error)")
+            }
+        }
+        let _ = Login(context: context) // Create an object in the Persistent container with the default values
+        do {
+            try context.save()
+        } catch  {
+            print("Error saving the context")
+        }
     }
     
+    
+    
+    
+    //SETUP LAYOUT
     func setupLayout(){
         view.backgroundColor = UIColor(red: 127/255, green: 216/255, blue: 190/255, alpha: 1)
         view.addSubview(formContainerView)
@@ -98,37 +113,39 @@ class LoginViewController: UIViewController {
         registerButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
-    func searchInLogin(email:String, password: String) -> Bool{
-        let container = NSPersistentContainer(name: "Login")
-        container.loadPersistentStores { (storeDescription, error) in
-            if let error = error {fatalError()}
-        }
-        let context = container.viewContext
-        let request: NSFetchRequest<Login> = Login.fetchRequest()
-        let predicate = NSPredicate(format: "email == %@ && password == %@", email, password)
-        
-        do {
-            let result = try context.fetch(request)
-            return !result.isEmpty
-//            for data in result as [NSManagedObject] {
-//                print(data.value(forKey: "email") as! String)
-//            }
-        } catch {
-            print("Failed")
-        }
-        return false
-    }
-
+    
+    
+    //LOGIN FUNCTION
     @objc func loginUser(){
-        
         if let email = emailField.text, let password = passwordTextField.text{
-           
-            if(searchInLogin(email: email, password: password)){
-                let root = MyTableViewController()
-                let table = UINavigationController(rootViewController: root)
-                self.present(table, animated: true, completion: nil)
+            let fetchRequest: NSFetchRequest<Login> = Login.fetchRequest()
+            let predicate = NSPredicate(format: "email == %@ && password == %@", email.lowercased(), password.lowercased())
+            fetchRequest.predicate = predicate
+            do {
+                let result = try self.context.fetch(fetchRequest)
+                if result.count > 0 {
+                    // LOGIN SUCCESSFUL!! :D
+                    // Now delete the object from the persistent cointainer
+                    context.delete(result.first!)
+                    // Go to the next view
+                    let root = MyTableViewController()
+                    let table = UINavigationController(rootViewController: root)
+                    self.present(table, animated: true, completion: nil)
+                    
+                } else {
+                    // INVALID CREDENTIALS
+                    let alertController = UIAlertController(title: "Invalid credentials", message: "Credenciales inválidas", preferredStyle: .alert)
+                    let actionOk = UIAlertAction(title: "OK",
+                                                 style: .default,
+                                                 handler: nil) //You can use a block here to handle a press on this button
+                    alertController.addAction(actionOk)
+                    present(alertController, animated: true)
+                }
+            } catch  {
+                print("There was an error")
             }
         }
     }
-
+    
 }
+

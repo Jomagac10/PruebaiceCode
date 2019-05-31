@@ -10,13 +10,13 @@ import UIKit
 
 class DetailsController: UIViewController {
     
+    //MARK: Properties
     var ami: amiibo?{
         didSet{
             if let image = ami?.image{
                 let url = URL(string: image)
                 amiiboImage.kf.setImage(with: url)
             }
-            
             if let name = ami?.name{
                 nameLabel.text = name
             }
@@ -81,6 +81,8 @@ class DetailsController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    //MARK: Setup Layout
     func setupLayout(){
         view.backgroundColor = UIColor(red: 127/255, green: 216/255, blue: 190/255, alpha: 1)
         view.addSubview(amiiboImage)
