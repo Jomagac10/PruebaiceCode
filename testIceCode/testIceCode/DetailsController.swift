@@ -43,6 +43,7 @@ class DetailsController: UIViewController {
         let tf = UILabel()
         tf.textColor = .black
         tf.textAlignment = .center
+        tf.textColor = UIColor(red: 252/255, green: 215/255, blue: 173/255, alpha: 1)
         //        tf.attributedPlaceholder = NSAttributedString(string: "Número de cuenta", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         tf.text = "Name"
         tf.translatesAutoresizingMaskIntoConstraints = false
@@ -53,6 +54,7 @@ class DetailsController: UIViewController {
         let tf = UILabel()
         tf.textColor = .black
         tf.textAlignment = .center
+        tf.textColor = UIColor(red: 252/255, green: 215/255, blue: 173/255, alpha: 1)
         //        tf.attributedPlaceholder = NSAttributedString(string: "Número de cuenta", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         tf.text = "Series"
         tf.translatesAutoresizingMaskIntoConstraints = false
@@ -64,6 +66,7 @@ class DetailsController: UIViewController {
         tf.textColor = .black
         tf.textAlignment = .center
         tf.numberOfLines = 4
+        tf.textColor = UIColor(red: 37/255, green: 161/255, blue: 142/255, alpha: 1)
         //        tf.attributedPlaceholder = NSAttributedString(string: "Número de cuenta", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         tf.text = "Release Dates"
         tf.translatesAutoresizingMaskIntoConstraints = false
@@ -79,7 +82,7 @@ class DetailsController: UIViewController {
     }
     
     func setupLayout(){
-        view.backgroundColor = .red
+        view.backgroundColor = UIColor(red: 127/255, green: 216/255, blue: 190/255, alpha: 1)
         view.addSubview(amiiboImage)
         
         amiiboImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true

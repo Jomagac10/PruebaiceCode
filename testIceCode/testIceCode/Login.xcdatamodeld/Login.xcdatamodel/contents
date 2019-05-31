@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="Login" representedClassName="Login" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String" defaultValueString="test@mail.com" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" defaultValueString="test123" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Login" positionX="-54" positionY="-9" width="128" height="75"/>
+    </elements>
 </model>

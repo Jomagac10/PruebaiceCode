@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let table = MyTableViewController()
-        window?.rootViewController = UINavigationController(rootViewController: table)
+        let table = LoginViewController()
+        window?.rootViewController = table
         return true
     }
 

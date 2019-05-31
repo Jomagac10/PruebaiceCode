@@ -11,6 +11,8 @@
 		DD4A18E122A0649500246406 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A18E022A0649500246406 /* MyTableViewController.swift */; };
 		DD4A18E322A0656900246406 /* amiibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A18E222A0656900246406 /* amiibo.swift */; };
 		DD4A18E522A0900200246406 /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A18E422A0900200246406 /* DetailsController.swift */; };
+		DD4A18E722A0A28F00246406 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A18E622A0A28F00246406 /* LoginViewController.swift */; };
+		DD4A18ED22A0B40E00246406 /* Login.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD4A18EB22A0B40E00246406 /* Login.xcdatamodeld */; };
 		DD65C1D322A05EED00A8FE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65C1D222A05EED00A8FE39 /* AppDelegate.swift */; };
 		DD65C1D822A05EED00A8FE39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD65C1D622A05EED00A8FE39 /* Main.storyboard */; };
 		DD65C1DA22A05EFC00A8FE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD65C1D922A05EFC00A8FE39 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 		DD4A18E022A0649500246406 /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		DD4A18E222A0656900246406 /* amiibo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amiibo.swift; sourceTree = "<group>"; };
 		DD4A18E422A0900200246406 /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
+		DD4A18E622A0A28F00246406 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DD4A18EC22A0B40E00246406 /* Login.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Login.xcdatamodel; sourceTree = "<group>"; };
 		DD65C1CF22A05EED00A8FE39 /* testIceCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testIceCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD65C1D222A05EED00A8FE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD65C1D722A05EED00A8FE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 				DD65C1DE22A05EFC00A8FE39 /* Info.plist */,
 				DD4A18E022A0649500246406 /* MyTableViewController.swift */,
 				DD4A18E422A0900200246406 /* DetailsController.swift */,
+				DD4A18E622A0A28F00246406 /* LoginViewController.swift */,
+				DD4A18EB22A0B40E00246406 /* Login.xcdatamodeld */,
 				DD4A18E222A0656900246406 /* amiibo.swift */,
 			);
 			path = testIceCode;
@@ -229,7 +235,9 @@
 				DD4A18E522A0900200246406 /* DetailsController.swift in Sources */,
 				DD4A18E322A0656900246406 /* amiibo.swift in Sources */,
 				DD65C1D322A05EED00A8FE39 /* AppDelegate.swift in Sources */,
+				DD4A18E722A0A28F00246406 /* LoginViewController.swift in Sources */,
 				DD4A18E122A0649500246406 /* MyTableViewController.swift in Sources */,
+				DD4A18ED22A0B40E00246406 /* Login.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +439,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DD4A18EB22A0B40E00246406 /* Login.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DD4A18EC22A0B40E00246406 /* Login.xcdatamodel */,
+			);
+			currentVersion = DD4A18EC22A0B40E00246406 /* Login.xcdatamodel */;
+			path = Login.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DD65C1C722A05EED00A8FE39 /* Project object */;
 }
